@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    instanceof dalam OOP di JavaScript digunakan untuk memeriksa apakah
+    sebuah objek adalah instance dari kelas tertentu atau merupakan turunan dari
+    kelas tersebut Bayangkan Anda memiliki beberapa jenis hewan, seperti anjing
+    dan kucing, dan masing-masing memiliki karakteristik dan perilaku yang
+    berbeda: 
+
+    Objek: Hewan tertentu, misalnya anjing bernama Fido. 
+    Kelas: Jenis
+    atau kategori hewan, misalnya Anjing atau Kucing. 
+    
+    Dengan instanceof, Anda bisa memeriksa apakah Fido adalah anjing (atau turunan dari kelas Anjing),
+    sehingga Anda bisa memastikan bahwa Fido memiliki semua karakteristik dan
+    perilaku yang dimiliki oleh anjing pada umumnya. -->
+
+    <script>
+      class Employee {}
+
+      class Manager extends Employee {}
+
+      const budi = new Employee(); // "budi" ==> disebut object/instance
+      const fajri = new Manager();
+
+      console.log(typeof fajri); // ini akan object, harapan kita bukan
+
+      // yang mana ini kita mau cek apakah suatu object itu ada ada didalam kelas tertentu
+      // kali ini saya mau cek apakah fajri itu ada di kelas ini atau tidak
+
+      console.info(budi instanceof Manager); // true
+      console.info(budi instanceof Employee); // false
+
+      console.info(fajri instanceof Manager); // true
+      console.info(fajri instanceof Employee); // true, karena kita sudah kek gabung dengan "extends"
+
+      // bisa juga cek apakah dia turunan dari class tertentu
+    </script>
+  </body>
+</html>

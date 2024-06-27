@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Configuration {
+        name = "Belajar Javascript OOP";
+        version = 1.0;
+        author = "Eko Kurniawan";
+      }
+
+      // ini dia ada di prototype-nya
+      class Configuration2 {
+        static name = "Belajar Javascript OOP";
+        static version = 1.0;
+        static author = "Eko Kurniawan";
+      }
+
+      const config = new Configuration();
+      // const config2 = new Configuration2(); ==> tidak perlu dibuatkan object-nya
+      console.info(config);
+      // console.info(config2);
+
+      // ada perbedaan cara mengakses property dari 2 class tadi
+      // tanpa "static"
+      console.info(config.name);
+
+      // dengan "static"
+      // jika pakai cara yg seperti sebelumnya dia akan eror
+      // oleh karena itu kita gunakan cara baru:
+      console.info(Configuration2.name); // jadi variabel global!
+
+      // cara ganti isi property
+      Configuration2.name = "Belajar Javascript OOP perubahan";
+      console.info(Configuration2.name);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name) {
+          this.name = name;
+          //   this.sayHello = function (name) {
+          //     console.log(`hello ${name}`);
+          //   }; // tidak di rekomendasikan didalam constructor
+        }
+
+        // ini akan masuk di prototype
+        sayHello(name) {
+          console.log(`hello ${name}`);
+        }
+      }
+
+      const fajri = new Person("fajri");
+
+      console.log(fajri);
+      console.log(fajri.name);
+      fajri.sayHello("fajri"); // ini dipanggil saja, nda usah console.log (akan undifened nanti)
+    </script>
+  </body>
+</html>

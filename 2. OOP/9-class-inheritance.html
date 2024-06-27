@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        sayHello(name) {
+          console.log(`Hi ${name}, my name is employee ${this.name}`);
+        }
+      }
+
+      // guna-nya extends itu agar bisa kek berhubungan gitu
+      // jadi apa yang dimiliki "Employee" dimiliki juga "Manager"
+      class Manager extends Employee {
+        sayHello(name) {
+          console.log(`Hi ${name}, my name is manager ${this.name}`);
+        } // misal ini dihapus maka tidak ada masalah, yang jadi masalah itu di text-nya aja
+        // karena di "Employee" itu dia pake "my name is employee"
+      }
+
+      // lebih mudah dari versi sebelumnya yg pake "function"
+
+      const budi = new Employee();
+      budi.name = "budi";
+      budi.sayHello("joko");
+
+      const aris = new Manager();
+      aris.name = "aris";
+      aris.sayHello("joko");
+
+      console.info(budi);
+      console.info(aris);
+    </script>
+  </body>
+</html>

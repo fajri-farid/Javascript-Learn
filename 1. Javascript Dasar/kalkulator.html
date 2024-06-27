@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>kalkulator</h1>
+    <script>
+      alert("welcome to kalkulator");
+      // dibawah ini ada namanya parse, kenapa parse?
+      // karena inputan user itu akan auto di stringkan oleh js
+      // dan kit perlu ubah ke number dulu agar hasilnya valid
+      // klw tidak akan aneh
+      // misal '1' + '1' = 11
+      const A = parseInt(prompt("masukkan nilai A"));
+      const operasi = prompt("masukkan operasi (+,-,*,/)");
+      const B = parseInt(prompt("masukkan nilai B"));
+      let hasil;
+      if (!isNaN(A) && !isNaN(B)) {
+        switch (operasi) {
+          case "+":
+            hasil = A + B;
+            alert(`hasil dari ${A} + ${B} adalah ${hasil}`);
+            break;
+          case "-":
+            hasil = A - B;
+            alert(`hasil dari ${A} - ${B} adalah ${hasil}`);
+            break;
+          case "*":
+            hasil = A * B;
+            alert(`hasil dari ${A} * ${B} adalah ${hasil}`);
+            break;
+          case "/":
+            hasil = A / B;
+            if (B === 0) {
+              alert("tidak dapat dibagi 0");
+            }
+            hasil = hasil.toFixed(2).replace(/\./g, ",");
+            alert(`hasil dari ${A} / ${B} adalah ${hasil}`);
+            break;
+          default:
+            alert("inputan tidak valid");
+        }
+      } else {
+        alert("output tidak valid");
+      }
+    </script>
+  </body>
+</html>

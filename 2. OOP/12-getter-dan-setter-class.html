@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        get fullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+
+        set fullName(value) {
+          const result = value.split(" ");
+          this.firstName = result[0];
+          this.lastName = result[1];
+        } // nampilin full name dari first + last
+      }
+
+      const fajri = new Person("fajri", "farid");
+      console.log(fajri);
+
+      const kinamoto = new Person();
+      kinamoto.fullName = "kinamoto tomo"; // tanpa perlu isi parameter udh dipisahkan dengan set
+      console.log(kinamoto);
+    </script>
+  </body>
+</html>

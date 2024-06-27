@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            throw new Error("total parameter harus lebih dari 0");
+            // tampilan eror di console!
+            // klw dia eror maka akan berhenti disini!
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      // sebelumnya itu kan dia
+
+      try {
+        console.info(MathUtil.sum());
+        console.info("fajri");
+      } catch (error) {
+        // akan diekseksekusi ketika dalam try ad error!
+        console.info(`terjadi error: ${error.message}`);
+      } finally {
+        console.log("selesai");
+      }
+
+      console.info("kinamoto");
+
+      class Counter {
+        #counter = 1;
+
+        next() {
+          try {
+            return this.#counter;
+          } finally {
+            this.#counter++; // agar bisa naik
+          }
+        }
+      }
+
+      const counter = new Counter();
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+    </script>
+  </body>
+</html>

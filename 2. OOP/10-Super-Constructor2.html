@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      class Employee {
+        constructor(firstName, lastName, age, position, salary) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = age;
+          this.position = position;
+          this.salary = salary;
+        }
+
+        sayHello(name) {
+          console.log(
+            `Hi ${name}, my name is employee ${this.firstName} ${this.lastName}`
+          );
+        }
+      }
+
+      class Manager extends Employee {
+        constructor(firstName, lastName, age, position, salary, department) {
+          super(firstName, lastName, age, position, salary);
+          this.department = department; 
+        }
+
+        sayHello(name) {
+          console.log(
+            `Hi ${name}, my name is manager ${this.firstName} ${this.lastName}`
+          );
+        }
+
+        manage() {
+          console.log(
+            `${this.firstName} is managing the ${this.department} department`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

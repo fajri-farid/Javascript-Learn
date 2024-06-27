@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // pake tanda "#" kek class
+
+      class Person {
+        say(name) {
+          if (name) {
+            this.#sayWithName(name);
+          } else {
+            this.#sayWithoutName();
+          }
+        }
+
+        //private
+        #sayWithoutName() {
+          console.info("hello");
+        }
+
+        //private
+        #sayWithName(name) {
+          console.log(`hi ${name}`);
+        }
+      }
+
+      const fajri = new Person();
+      fajri.say("fajri"); // jadi cuman bisa method saya doang yang kepake
+      // saywithout/withName nggk bisa, karena dia private
+
+      //   fajri.#sayWithoutName(); // akan eror
+    </script>
+  </body>
+</html>

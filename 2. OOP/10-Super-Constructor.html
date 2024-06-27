@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      class Employee {
+        constructor(firstName) {
+          this.firstName = firstName;
+        }
+
+        sayHello(name) {
+          console.log(`Hi ${name}, my name is employee ${this.firstName}`);
+        }
+      }
+
+      // sebenarnya cara ini itu eror
+      //   class Manager extends Employee {
+      //     constructor(lastName) {
+      //       this.lastName = lastName;
+      //     }
+      //     sayHello(name) {
+      //       console.log(`Hi ${name}, my name is manager ${this.lastName}`);
+      //     }
+      //   }
+
+      class Manager extends Employee {
+        constructor(firstName, lastName) {
+          super(firstName); // untuk firstName di Employee, disini kita isi semuanya yang ada di Employee
+          // contoh ad di berikutnya!
+          // misal constructor di induknya tidak ada dalam hal ini "Employee", maka kita cuman
+          // isi dengan "super()", jadi tetap wajib pakai!
+          this.lastName = lastName;
+        }
+        sayHello(name) {
+          console.log(`Hi ${name}, my name is manager ${this.firstName}`);
+        }
+      }
+
+      const budi = new Employee("budi");
+      //   budi.name = "budi";
+      budi.sayHello("joko");
+
+      const aris = new Manager("aris"); // constructor "Manager" ada di "Employee"
+      //   aris.name = "aris";
+      aris.sayHello("joko");
+
+      console.info(budi);
+      console.info(aris);
+    </script>
+  </body>
+</html>

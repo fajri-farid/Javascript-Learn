@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(`hello ${this.firstName} ${this.lastName}`);
+        };
+      }
+
+      const fajri = new Person("fajri", "farid");
+      console.log(fajri);
+      fajri.sayHello("hi");
+      fajri.sayBye = function () {
+        console.log("good bye");
+      }; // disini hanya "fajri" saja yang punya sayBye, "kinamoto" tidak.
+      // bagaimana caranya agar keduanya/semuanya dapat? kita pakai "prototype"
+      // contoh next file!
+
+      const kinamoto = new Person("kinamoto", "tomo");
+      console.log(kinamoto);
+    </script>
+  </body>
+</html>

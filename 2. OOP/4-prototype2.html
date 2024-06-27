@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(`hello ${this.firstName} ${this.lastName}`);
+        };
+      }
+
+      const fajri = new Person("fajri", "farid");
+      console.log(fajri);
+      fajri.sayHello("hi");
+
+      const kinamoto = new Person("kinamoto", "tomo");
+      console.log(kinamoto);
+
+      // caranya adalah!
+      Person.prototype.sayBye = function () {
+        return console.log("good bye!");
+      }; // muncul di bagian prototype
+
+      console.log(fajri.sayBye()); // ini akan ada undefined nya karena function yang sudah di console.log
+      // Kita console.log lagi.
+      // Fungsi sayBye memanggil console.log("good bye!"); yang mencetak "good bye!" ke konsol, tetapi
+      // tidak mengembalikan nilai apa pun (secara default, fungsi JavaScript yang tidak memiliki
+      // pernyataan return akan mengembalikan undefined).
+    </script>
+  </body>
+</html>

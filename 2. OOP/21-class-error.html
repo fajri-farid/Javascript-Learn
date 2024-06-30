@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class ValidatoronError extends Error {
+        constructor(message, field) {
+          super(message);
+          this.field = field;
+        }
+      }
+
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            throw new ValidatoronError(
+              "total parameter harus lebih dari 0",
+              "numbers"
+            );
+            // tampilan eror di console!
+            // klw dia eror maka akan berhenti disini!
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      // sebelumnya itu kan dia
+
+      try {
+        console.info(MathUtil.sum());
+        console.info("fajri");
+      } catch (error) {
+        // akan diekseksekusi ketika dalam try ad error!
+        if (error instanceof ValidatoronError) {
+          console.info(
+            `terjadi error: di field ${error.field} dengan erro ${error.message}`
+            // field itu buat nampilin dia di field mana erornya, yang mana disini itu di field numbers
+            // field itu isi dari properti
+            // jadi:
+            // properti { field/object, ad juga method(function) }
+          );
+        } else {
+          console.info(`terjadi error: ${error.message}`);
+        }
+      } finally {
+        console.log("selesai");
+      }
+
+      console.info("kinamoto");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // sumber belajar more:
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+      // untuk mengambil waktu sekarang
+
+      const now = new Date(); // WITA itu ngikut jam singapore
+      console.log(now);
+
+      const date = new Date(2020, 10, 10); // kita inputkan sendiri tanggalnya
+      console.log(date);
+
+      const date2 = new Date(2020, 10, 10, 16, 15, 9, 123); // inputan lebih lagi sampe ke milidetik
+      console.log(date2);
+
+      console.info(new Date(1719883946596)); // ini angka dari: https://currentmillis.com/
+
+      /*
+       Epoch/Unix time: 
+       Dimulai dari tanggal 1 Januari 1970 pukul 00:00:00 Waktu Universal Terkoordinasi (UTC). 
+       Titik awal ini disebut sebagai "Epoch".
+       Setiap detik yang berlalu sejak Epoch akan menambah angka Unix time.
+       Misalnya, Unix time 1.688.304.980 berarti 1.688.304.980 detik telah berlalu sejak 1 Januari 1970.
+
+       cara pakainya dengan .getTime
+       */
+
+      const now1 = new Date(); // WITA itu ngikut jam singapore
+      console.log(now.getTime());
+
+      // hal-hal lain dari .get...()
+      console.log(now1.getDay()); // day disini tanggal
+      console.log(now1.getMonth()); // (0) januari - (11) desember
+      console.log(now1.getTimezoneOffset());
+      /* 
+        Cara Kerja getTimezoneOffset():
+        - Nilai Positif: Jika zona waktu Anda berada di sebelah barat UTC (misalnya, Amerika), hasilnya 
+          akan positif. Misalnya, zona waktu EST (UTC -5) akan menghasilkan output 300.
+        - Nilai Negatif: Jika zona waktu Anda berada di sebelah timur UTC (misalnya, Asia), hasilnya akan 
+          negatif.
+      */
+      console.log(now1.getFullYear()); // ambil tahun
+      console.log(now1.getUTCDate()); // mengembalikan tanggal berdasarkan zona waktu UTC.
+      // UTC itu kek GMT (London), tapi bedanya UTC tidak terikat pada tempat
+      console.log(now1.getUTCFullYear());
+    </script>
+  </body>
+</html>

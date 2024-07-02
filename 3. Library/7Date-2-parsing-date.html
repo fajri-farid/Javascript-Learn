@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // format: YYYY-MM-DDTH:mm-ss-sss-Z
+
+      const parseTimestamp = Date.parse("2020-12-18T10:10:10.123+07:00");
+      console.info(parseTimestamp);
+
+      const parseDate = new Date(parseTimestamp);
+      console.info(parseDate);
+
+      console.info(parseDate.getHours());
+    </script>
+  </body>
+</html>

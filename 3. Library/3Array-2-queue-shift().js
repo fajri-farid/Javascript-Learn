@@ -1,4 +1,4 @@
-const queue = [];
+const queue = []; // antrian dia itu fifo "first in first out"
 
 queue.push("muh.");
 queue.push("fajri");

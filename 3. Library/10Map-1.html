@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    sebelumnya ada materinya, silahkan cek disini:
+    https://docs.google.com/presentation/d/1qaqOnHQLyeIBBc1wEG49XRtAwp1vSMsKn66-cOR9ML8/edit#slide=id.gb9271b049a_0_259 
+    -->
+    <script>
+      // membuat object dengan map()
+
+      // referensi
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+      const map = new Map();
+
+      map.set("Name", "Eko Kurniawan");
+      map.set("Address", "Indonesia");
+
+      console.info(map);
+      console.info(map.get("Name"));
+      console.info(map.get("Address"));
+      console.info(map.get("Hobby")); // karena nggk ada maka dia "undefined"
+
+      for (const element of map) {
+        console.info(`${element[0]} : ${element[1]}`);
+      }
+
+      map.forEach((value, key) => {
+        console.log(`${key} : ${value}`);
+      });
+    </script>
+  </body>
+</html>

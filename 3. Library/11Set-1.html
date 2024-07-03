@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const buahFavorit = new Set();
+
+      // Menambahkan buah ke Set
+      buahFavorit.add("apel");
+      buahFavorit.add("mangga");
+      buahFavorit.add("jeruk");
+      buahFavorit.add("mangga"); // Tidak akan ditambahkan karena sudah ada
+
+      console.log(buahFavorit);
+
+      // Mengecek keberadaan buah
+      console.log(buahFavorit.has("apel")); // Output: true
+      console.log(buahFavorit.has("durian")); // Output: false
+
+      // Menghapus buah
+      buahFavorit.delete("jeruk");
+      console.log(buahFavorit.has("jeruk")); // Output: false
+
+      // Mengetahui jumlah buah favorit
+      console.log(buahFavorit.size); // Output: 2
+
+      // Melakukan iterasi pada Set
+      buahFavorit.forEach((value) => {
+        console.log(value);
+      });
+      // Output:
+      // apel
+      // mangga
+
+      // mungkin bingung kenapa jeruk tidak ada di console itu karena kita sudah menghapusnya di pertengahan
+      // code. Jadi diawal dia sudah tidak ada
+    </script>
+  </body>
+</html>

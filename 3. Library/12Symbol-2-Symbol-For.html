@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* Symbol()
+      Membuat simbol unik yang tidak bisa diduplikasi. Setiap kali Anda memanggil "Symbol()", Anda 
+      akan mendapatkan simbol baru yang berbeda, bahkan jika Anda memberikan argumen string yang sama.
+      */
+
+      /* Symbol.for()
+      Membuat simbol global yang bisa diakses dari mana saja dalam kode Anda. Jika Anda memanggil 
+      Symbol.for() dengan kunci (key) yang sama, Anda akan mendapatkan simbol yang sama.
+      */
+      const person = {};
+
+      person[Symbol.for("firstName")] = "Eko";
+      person[Symbol.for("lastName")] = "Eko";
+
+      console.info(person);
+      console.info(person[Symbol.for("firstName")]);
+      console.info(person[Symbol.for("lastName")]);
+
+      const id1 = Symbol.for("id");
+      const id2 = Symbol.for("id");
+
+      console.log(id1 === id2); // akan true
+      console.log(person[Symbol.for("firstName")] === person[Symbol.for("lastName")]) // true juga
+
+      // mereka true karena deskripsi atau isinya itu sama
+    </script>
+  </body>
+</html>

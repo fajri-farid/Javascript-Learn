@@ -29,9 +29,29 @@
       const id2 = Symbol.for("id");
 
       console.log(id1 === id2); // akan true
-      console.log(person[Symbol.for("firstName")] === person[Symbol.for("lastName")]) // true juga
+      console.log(
+        person[Symbol.for("firstName")] === person[Symbol.for("lastName")]
+      ); // true juga
 
       // mereka true karena deskripsi atau isinya itu sama
+
+      /* Kapan Menggunakan Mana?
+      - Gunakan Symbol() ketika Anda membutuhkan simbol yang benar-benar unik dan hanya digunakan dalam \
+        lingkup lokal. Misalnya, untuk membuat properti privat pada objek.
+      - Gunakan Symbol.for() ketika Anda membutuhkan simbol yang bisa diakses secara global dan 
+        digunakan bersama oleh beberapa bagian kode. Misalnya, untuk membuat konstanta yang 
+        merepresentasikan tipe data atau event.
+      */
+
+      /* 
+      Symbol.for() memberikan cara untuk membuat simbol yang bisa diakses secara global, sementara 
+      Symbol() membuat simbol yang unik dan lokal. Pilihlah yang sesuai dengan kebutuhan Anda.
+      */
+
+      /* Contoh Kasus Penggunaan:
+      Symbol(): Membuat ID unik untuk setiap pengguna dalam aplikasi.
+      Symbol.for(): Membuat konstanta global untuk event seperti
+      */
     </script>
   </body>
 </html>

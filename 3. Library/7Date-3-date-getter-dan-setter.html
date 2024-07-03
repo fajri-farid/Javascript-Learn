@@ -10,7 +10,32 @@
       // referensi lagi:
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#instance_methods
 
-      
+      const date = new Date();
+
+      console.info("Tahun:", date.getFullYear());
+      console.info("Bulan:", date.getMonth() + 1); // Ditambah 1 karena bulan di JavaScript dimulai dari 0
+      console.info("Tanggal:", date.getDate());
+      console.info("Jam:", date.getHours());
+      console.info("Menit:", date.getMinutes());
+      console.info("Detik:", date.getSeconds());
+      console.info("Milidetik:", date.getMilliseconds());
+      console.info("Selisih Zona Waktu (menit):", date.getTimezoneOffset());
+
+      // ini dia mengubah waktu ya!
+      console.log("Waktu awal:", date); // Output: Waktu awal: 2024-07-02T11:24:00.000Z
+
+      // Mengubah tanggal menjadi 15
+      date.setDate(15);
+      console.log("Setelah setDate:", date); // Output: Setelah setDate: 2024-07-15T11:24:00.000Z
+
+      // Mengubah bulan menjadi Oktober (9)
+      date.setMonth(9);
+      console.log("Setelah setMonth:", date); // Output: Setelah setMonth: 2024-10-15T11:24:00.000Z
+
+      // Mengubah jam menjadi 18:30
+      date.setHours(18);
+      date.setMinutes(30);
+      console.log("Setelah setHours dan setMinutes:", date); // Output: Setelah setHours dan setMinutes: 2024-10-15T18:30:00.000Z
     </script>
   </body>
 </html>

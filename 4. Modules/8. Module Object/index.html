@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="module-object.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      //   import { firstName, middleName, lastName, hello } from "./module-object.js";
+
+      // panggil object!
+      import * as fajri from "./module-object.js";
+      /* 
+      Penggunaan import * as di JavaScript memungkinkan Anda untuk mengimpor semua ekspor dari modul 
+      sebagai satu objek. Ini berguna jika Anda ingin mengakses beberapa atau semua ekspor dari modul 
+      tanpa harus mendeklarasikan setiap impor satu per satu
+      */
+
+      console.info(fajri.firstName);
+      console.info(fajri.middleName);
+      console.info(fajri.lastName);
+
+      fajri.hello();
+
+      const person = new fajri.Person();
+    </script>
+  </body>
+</html>

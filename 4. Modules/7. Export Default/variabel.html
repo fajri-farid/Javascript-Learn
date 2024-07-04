@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="variabel.mjs"></script>
+  </head>
+  <body>
+    <script type="module">
+      // walaupun sebelumnya sudah ada namanya "name" tapi karena default
+      // kita bebas kasih nama
+      export { default as name } from "./variabel.mjs";
+
+      console.info(name);
+    </script>
+  </body>
+</html>

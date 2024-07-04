@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="class.mjs"></script>
+  </head>
+  <body>
+    <script type="module">
+      import { default as Person } from "./class.mjs";
+
+      const person = new Person("Fajri");
+      person.sayHello("joko");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="exportDefault-Named.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      // direkomendasikan pisah kek gini untuk named dan default
+      import { title, content } from "./exportDefault-Named.js";
+      // disarankan juga tidak usah pake default
+      import penulis from "./exportDefault-Named.js";
+
+      console.log(title);
+      console.log(content);
+      console.log(penulis);
+    </script>
+  </body>
+</html>

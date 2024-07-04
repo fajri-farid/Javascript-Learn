@@ -1,0 +1,9 @@
+sebelumnya kan setiap hal yang mau kita export itu kita tuliskan di setiap sebelum variabel/fungsi
+atau lainnya.
+
+Tapi misal klw ada banyak hal itu kita bisa pusing sendiri, oleh karena itu kita bisa export hal"
+yang mau di export di code paling bawah.
+
+jadi tinggal:
+
+export{..., ..., ...}

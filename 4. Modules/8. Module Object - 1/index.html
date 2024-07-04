@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="module.mjs"></script>
+  </head>
+  <body>
+    <script type="module">
+      import * as utils from "./module.mjs";
+      // jadi panggil sekali aja
+      // dan utils menjadi kek object begitu
+      // tinggal "utils.(yang diinginkan, variabel, function, dll)"
+
+      console.log(utils.add(2, 3)); // Output: 5
+      console.log(utils.subtract(5, 2)); // Output: 3
+      console.log(utils.multiply(2, 4)); // Output: 8
+      console.log(utils.divide(8, 2)); // Output: 4
+    </script>
+  </body>
+</html>

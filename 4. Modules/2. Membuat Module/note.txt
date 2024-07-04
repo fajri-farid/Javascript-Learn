@@ -1,0 +1,21 @@
+IMP0RTANT!
+Membuat module sangat sederhana, kita cukup membuat file JavaScript saja
+Yang membedakan adalah, saat kita akan meload file JavaScript dari HTML, kita tidak menggunakan type 
+javascript lagi, melainkan menggunakan type module
+
+PEMBEDA MODULE DAN JS
+Karena File JavaScript Module sebenarnya sama dengan JavaScript, kadang developer membedakan nama file
+untuk JavaScript Module menggunakan .mjs. Hal ini untuk bisa dengan mudah membedakan mana file JavaScript 
+biasa, mana file JavaScript module hanya dengan extension file nya saja
+
+diawal akan eror ketika diawal kita panggil function di module.
+KENAPA EROR?
+- Secara default, saat kita menggunakan fitur JavaScript Module, semua kode (function, variable, class dan 
+lain-lain) tidak akan di ekspos keluar module tersebut
+- Jika kita ingin mengekspos kode tersebut, kita harus memberitahunya secara eksplisit
+
+jadi kita tambahkan export pada setiap function yang mau kita pakai di tempat lain. 
+tapi kok masih eror?
+karena kita perlu import juga. Jadi perlu ada export untuk bisa dipake dari sisi module-nya terus import 
+pada sisi tempat yang mau kita pakai
+juga pada scriptnya tandai typenya jadi module  

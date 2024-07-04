@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="say.mjs"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- jangan lupa type="module"-nya -->
+    <script type="module">
+      import { sayHello, sayGoodBye } from "./say.mjs";
+      // akan eror klw kita tidak ekspor module-nya juga perlu import
+      sayHello("fajri");
+      sayGoodBye("fajri");
+    </script>
+  </body>
+</html>

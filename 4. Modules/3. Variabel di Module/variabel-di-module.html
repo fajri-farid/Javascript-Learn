@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="variable.mjs"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- jangan lupa type="module"-nya -->
+    <script type="module">
+      import { name } from "./variable.mjs";
+      // import { name } from "./variable2.mjs";
+      // karena diatas ini pake variable "name" dan tidak boleh sama
+      // maka akan eror nantinya. jadi pakai satu saja. walaupun nanti ada caranya agar tidak eror
+
+      console.info(name); // keluar string kosong
+    </script>
+  </body>
+</html>

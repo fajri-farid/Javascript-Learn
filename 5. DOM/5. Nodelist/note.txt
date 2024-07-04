@@ -1,0 +1,25 @@
+NODELIST
+- NodeList adalah kumpulan dari Node
+- Biasanya NodeList digunakan ketika kita menyeleksi banyak Node sekaligus, misal ketika kita ingin 
+  mengambil semua children di Node misalnya
+- https://developer.mozilla.org/en-US/docs/Web/API/NodeList 
+
+kumpulan dari Node
+
+Live vs Static NodeList
+- NodeList memiliki 2 tipe, yaitu Live dan Static
+- Live artinya perubahan yang terjadi pada NodeList nya, akan merubah semua NodeList yang sama
+- Static artinya perubahan yang terjadi pada NodeList nya, tidak akan merubah semua NodeList yang sama
+- Saat kita menggunakan element.childNodes, NodeList tersebut bersifat Live
+- Saat kita menggunakan document.querySelectorAll(), NodeList tersebut bersifat Static
+
+Dalam konteks DOM:
+- Live NodeList   : Daftar elemen HTML yang selalu sinkron dengan perubahan pada dokumen. Jika Anda 
+                    menambahkan atau menghapus elemen di halaman web, Live NodeList akan langsung diperbarui.
+- Static NodeList : Daftar elemen HTML yang diambil pada saat tertentu dan tidak akan berubah, meskipun 
+                    dokumen HTML mengalami perubahan.
+
+Kapan Menggunakan Masing-Masing?
+- Live NodeList   : Cocok jika Anda ingin daftar elemen selalu terbarui dengan perubahan pada dokumen.
+- Static NodeList : Cocok jika Anda ingin mengambil daftar elemen pada saat tertentu dan tidak ingin 
+                    daftar tersebut berubah meskipun dokumen berubah.

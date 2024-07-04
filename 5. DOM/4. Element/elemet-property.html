@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <h1 id="title" class="title">this is title</h1>
+      <p id="description" class="description">this is description</p>
+    </div>
+    <script>
+      const content = document.getElementById("content");
+
+      console.info(content.id);
+      // Kode ini mengambil nilai dari atribut id elemen "content". Dalam hal ini, nilai atribut id
+      // adalah "content".
+      console.info(content.className);
+      // Kode ini mengambil nilai dari atribut class elemen "content". Dalam hal ini, nilai atribut
+      // class adalah "content"
+      console.info(content.tagName);
+      // Kode ini mengambil nama tag HTML dari elemen "content". Karena elemennya adalah <div>, maka nama
+      // tag-nya adalah "DIV"
+    </script>
+  </body>
+</html>

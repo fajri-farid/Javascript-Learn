@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      id="logo"
+      src="https://www.programmerzamannow.com/img/pzn.png"
+      alt="PZN Logo"
+    />
+
+    <script>
+      const logo = document.getElementById("logo");
+      const src = logo.getAttribute("src"); // langsung getAttribute saja
+
+      console.info(src);
+    </script>
+  </body>
+</html>

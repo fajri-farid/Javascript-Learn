@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <h1 id="title" class="title">this is title</h1>
+      <p id="description" class="description">this is description</p>
+    </div>
+    <script>
+      const content = document.getElementById("content");
+
+      const description = document.getElementById("description");
+      description.remove(); // ngehapus content dengan id "description"
+
+      // bisa juga ya ternyata gini
+      document.getElementById("title").remove();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content" id="content">
+      <!-- kosong yeee! -->
+    </div>
+    <script>
+      const content = document.getElementById("content");
+      // kita inisialisasi atau kita simpan elemet dengan id "content" di dalam variabel "content"
+
+      const title = document.createElement("h1");
+      // kita buat elemet baru yaitu "h1" yang kita namai "title"
+      title.textContent = "Belajar javascript DOM";
+      // pada h1 tadi yaitu "title" kita berikan isi atau tulisan
+      content.appendChild(title);
+      // tulsain tadi kita masukkan ke dalam content atau didalam div dengan id "content"
+
+      // penjelasan sama kek diatas!
+      const description = document.createElement("p");
+      description.textContent = "belajar DOM di udemy course pak Eko";
+      content.appendChild(description);
+
+      /* 
+        Analogi:
+        Bayangkan Anda sedang membuat poster. Kode ini seperti:
+        - Menemukan papan kosong (elemen "content") tempat Anda akan memasang poster.
+        - Mengambil kertas kosong (elemen <h1>) dan menulis judul "Belajar javascript DOM" di atasnya.
+        - Menempelkan kertas dengan judul tersebut ke papan kosong.
+      */
+    </script>
+  </body>
+</html>

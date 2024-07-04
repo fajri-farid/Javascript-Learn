@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="menu">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+
+    <script>
+      const menu = document.getElementById("menu");
+      console.info(menu);
+
+      // mengapush li dengan id first
+      menu.removeChild(document.getElementById("first"));
+      /* 
+      Penjelasan Bahasa Manusia:
+      - Temukan Elemen Menu: Pertama, kode ini mencari elemen HTML dengan ID "menu". Biasanya, ini adalah 
+        elemen <ul> (unordered list) yang berisi daftar item menu.
+      - Temukan Item "First": Selanjutnya, kode ini mencari elemen <li> (list item) di dalam elemen menu 
+        yang memiliki ID "first". Ini adalah item menu yang ingin kita hapus.
+      - Hapus Item "First": Terakhir, kode ini menggunakan metode removeChild() pada elemen menu untuk 
+        menghapus item "First" yang sudah ditemukan sebelumnya. Item "First" akan hilang dari daftar menu 
+        di halaman web.
+      */
+    </script>
+  </body>
+</html>

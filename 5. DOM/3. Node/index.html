@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="menu">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+
+    <script>
+      const menu = document.getElementById("menu");
+      console.info(menu);
+      console.info(menu.children);
+      console.info(menu.childNodes);
+
+      const second = document.getElementById("second");
+      console.info(second);
+      console.info(second.textContent); // detail atau isinya
+      // ini itu di referensinya kek di "menu.childNodes"
+      // kan kebagi-bagi tuh jadi beberapa index
+      // jadi urutannya gitu
+      console.info(second.previousSibling); // sebelumnya
+      // merujuk pada text node yang berisi spasi atau baris baru di antara elemen <li> pertama dan kedua.
+      console.info(second.previousSibling.previousSibling); // sebelumnya sebelumnya
+      console.info(second.nextSibling); // sesudahnya
+    </script>
+  </body>
+</html>

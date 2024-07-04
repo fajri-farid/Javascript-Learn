@@ -1,0 +1,61 @@
+1. Document
+Pengertian: Document adalah representasi dari seluruh halaman web. Ini adalah akar dari semua node yang 
+ada di halaman web.
+Perumpamaan: Bayangkan Document sebagai sebuah buku besar yang berisi seluruh isi website, mulai dari teks, 
+gambar, hingga skrip.
+
+2. Node
+Pengertian  : Node adalah base class untuk semua tipe data di DOM, seperti Document, Element, dan Attr.
+Perumpamaan : Bayangkan Node seperti blok bangunan dari website. Setiap bagian dari website, seperti teks, 
+              gambar, atau atribut, semuanya adalah node.
+
+3. Element
+Pengertian  : Element adalah representasi dari objek elemen di halaman web, seperti <head>, <body>, <form>, 
+              <input>, dan lain-lain.
+Perumpamaan : Element seperti bagian-bagian dari rumah. Misalnya, pintu, jendela, dan dinding semuanya 
+              adalah elemen dari rumah tersebut.
+
+4. NodeList
+Pengertian: NodeList adalah array atau koleksi yang berisi node. NodeList bisa didapatkan dengan metode 
+seperti getElementsByTagName atau querySelectorAll.
+Perumpamaan: NodeList seperti daftar barang belanjaan. Setiap item dalam daftar adalah node yang berbeda 
+di halaman web.
+
+5. Attr
+Pengertian: Attr atau attribute adalah representasi dari atribut objek dalam elemen. Atribut adalah 
+informasi tambahan yang terdapat di dalam tag elemen.
+Perumpamaan: Attr seperti label pada botol. Misalnya, pada botol soda, label berisi informasi seperti 
+nama minuman, volume, dan bahan-bahan.
+
+6. NamedNodeMap
+Pengertian: NamedNodeMap adalah koleksi yang berisi Attr dalam bentuk map, memungkinkan akses ke atribut 
+berdasarkan nama.
+Perumpamaan: NamedNodeMap seperti daftar kontak di ponsel Anda. Setiap kontak (attribute) memiliki nama 
+dan informasi tambahan, dan Anda bisa mencari kontak berdasarkan nama.
+
+----------------------------------------------------------------------------------------------------------
+
+MUDAHNYA:
+1. Document
+Kata Kunci  : "Seluruh Halaman"
+Pengingat   : Representasi dari seluruh halaman web.
+
+2. Node
+Kata Kunci  : "Blok Bangunan"
+Pengingat   : Base class untuk semua tipe data di DOM.
+
+3. Element
+Kata Kunci  : "Bagian Rumah"
+Pengingat   : Representasi objek elemen di halaman web (misalnya, <head>, <body>).
+
+4. NodeList
+Kata Kunci  : "Daftar Barang"
+Pengingat   : Koleksi yang berisi node (array-like).
+
+5. Attr
+Kata Kunci  : "Label Botol"
+Pengingat   : Representasi atribut dari elemen (misalnya, id, class).
+
+6. NamedNodeMap
+Kata Kunci  : "Daftar Kontak"
+Pengingat   : Koleksi yang berisi atribut dalam bentuk map.

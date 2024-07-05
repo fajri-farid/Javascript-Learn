@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="fajri"></div>
+    <div class="fajri"></div>
+    <div class="faridfajri"></div>
+    <div class="fajri123"></div>
+    <div class="fajri breeeee"></div>
+
+    <script>
+      // get attribute class
+      const elements = document.querySelectorAll("div[class^='fajri']");
+      // akan mencari semua elemen <div> yang memiliki atribut class yang dimulai dengan kata "fajri"
+
+      const elements2 = document.querySelectorAll("div[class*='fajri']");
+      // elemen <div> yang memiliki atribut class yang mengandung kata "fajri" di mana saja.
+
+      const elements3 = document.querySelectorAll("div[class$='fajri']");
+      // semua elemen <div> yang memiliki atribut class yang diakhiri dengan kata "fajri".
+
+      const elements4 = document.querySelectorAll("div[class='fajri']");
+      // semua elemen <div> yang memiliki atribut class yang sama persis dengan "fajri".
+
+      console.log(elements);
+      console.log(elements2);
+      console.log(elements3);
+      console.log(elements4);
+    </script>
+  </body>
+</html>

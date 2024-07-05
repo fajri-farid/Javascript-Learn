@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="content">
+      <script>
+        console.info("Hello World");
+      </script>
+      <b>Eko</b> Kurniawan <i>Khannedy</i>
+    </p>
+    <script>
+      const content = document.getElementById("content");
+      console.info(content.textContent); // dia ambil semua text
+      console.info(content.innerText); // cuman valuenya aja, script nggk karena dia tau bahwa script
+      // nggk akan di render
+      console.info(content.innerHTML); // dia ambil semua beserta tag dan atribut-nya awowkwkw
+    </script>
+  </body>
+</html>

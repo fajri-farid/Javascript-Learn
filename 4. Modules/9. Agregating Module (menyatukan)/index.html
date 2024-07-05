@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="agregate-module.js"></script>
+  </head>
+  <body>
+    <!-- selalu ingat type = "module" -->
+    <script type="module">
+      import { Person, sayHello, sayGoodBye, sum } from "./agregate-module.js";
+
+      const person = new Person("Eko");
+
+      sayHello("Eko");
+
+      sayGoodBye("Eko");
+
+      console.info(sum(10, 10));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="commentForm">
+      <!-- Input untuk komentar -->
+      <label for="comment">
+        Comment: <input id="comment" type="text" name="comment" />
+      </label>
+      <br />
+      <!-- Input untuk nama pengirim -->
+      <label for="from">
+        From: <input id="from" type="text" name="from" />
+      </label>
+      <br />
+      <!-- Tombol submit -->
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Div untuk menampilkan daftar komentar -->
+    <div id="commentList"></div>
+
+    <script>
+      // Fungsi yang dijalankan saat formulir dikirim
+      document.querySelector("form[name=commentForm]").onsubmit = function (
+        event
+      ) {
+        const commentList = document.getElementById("commentList");
+        const comment = document.getElementById("comment").value;
+        const from = document.getElementById("from").value;
+
+        const commentItem = document.createElement("p");
+        commentItem.textContent = `${comment} - ${from}`;
+
+        // Tambahkan paragraf baru ke dalam div daftar komentar
+        commentList.appendChild(commentItem);
+
+        // Reset formulir agar kosong kembali
+        document.forms["commentForm"].reset();
+
+        // Mencegah pengiriman formulir secara default agar halaman tidak ke refresh
+        event.preventDefault();
+      };
+    </script>
+  </body>
+</html>

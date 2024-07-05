@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="commentForm">
+      <!-- Input untuk komentar -->
+      <label for="comment">
+        Comment: <input id="comment" type="text" name="comment" />
+      </label>
+      <br />
+      <!-- Input untuk nama pengirim -->
+      <label for="from">
+        From: <input id="from" type="text" name="from" />
+      </label>
+      <br />
+      <!-- Tombol submit -->
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Div untuk menampilkan daftar komentar -->
+    <div id="commentList"></div>
+
+    <script>
+      document.forms["commentForm"].onsubmit = function (event) {
+        const commentList = document.getElementById("commentList");
+        const comment = document.forms["commentForm"]["comment"].value;
+        const from = document.forms["commentForm"]["from"].value;
+
+        const commentItem = document.createElement("p");
+        commentItem.textContent = `${comment} - ${from}`;
+
+        commentList.appendChild(commentItem);
+
+        document.forms["commentForm"].reset(); // ketika sudah send, form bakal ke restart (kosong)
+
+        event.preventDefault();
+      };
+    </script>
+  </body>
+</html>

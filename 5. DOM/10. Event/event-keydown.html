@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Keydown</title>
+  </head>
+  <body>
+    <input type="text" id="textInput" placeholder="Type something..." />
+    <script>
+      const textInput = document.getElementById("textInput");
+
+      // nge-console segala hal yang kita lakukan selama di text input
+      textInput.addEventListener("keydown", function (event) {
+        console.log("Key pressed: " + event.key);
+      });
+    </script>
+  </body>
+</html>

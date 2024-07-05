@@ -14,14 +14,12 @@
 
     <script>
       const logo = document.getElementById("logo");
-      const src = logo.getAttribute("src"); // langsung getAttribute src saja, karena yang dituliskan 
-      // hanya "src"
-      const id = logo.getAttribute("id");
-      const alt = logo.getAttribute("alt");
+      const attributes = logo.attributes;
 
-      console.info(src);
-      console.info(id);
-      console.info(alt);
+      // jadi ini itu dia akan nge console semua atribut dari id "logo"
+      for (let attribute of attributes) {
+        console.info(`${attribute.name} : ${attribute.value}`);
+      }
     </script>
   </body>
 </html>

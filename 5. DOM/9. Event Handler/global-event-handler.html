@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="clickMe" type="button" value="Click Me" />
+    <script>
+      const clickMe = document.getElementById("clickMe");
+
+      clickMe.onclick = function () {
+        clickMe.setAttribute("value", "you've already click me!");
+      };
+
+      clickMe.onclick = function () {
+        console.log("click!");
+      }; // ini yang akan kepake
+      // karena Handler yang baru akan menggantikan handler yang lama.
+
+      // dia hanya menjalankan satu saja
+    </script>
+  </body>
+</html>

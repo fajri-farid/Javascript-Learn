@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="clickMe" type="button" value="Click Me" />
+    <script>
+      const clickMe = document.getElementById("clickMe");
+
+      // ini itu jalan ketik button id "clickMe" di click
+      // juga ketika sudah di klik ini akan mengubah valuenya
+      // menjadi text yang sudah ditetapkan disini!
+      clickMe.addEventListener("click", function () {
+        clickMe.setAttribute("value", "you've already click me!");
+        // liat atribut id "clickMe", disitukan yang ada "value"
+        // nah valuenya itu yang akan kita ubah
+      });
+
+      let i = 0;
+      clickMe.addEventListener("click", function () {
+        console.log("click", ++i);
+      });
+
+      // nah ini event listener dia bisa menjalankan dua handler sekaligus
+      // klw global hanya satu aja!
+    </script>
+  </body>
+</html>

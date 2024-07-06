@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <form name="todoForm" action="">
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="todo">Todo:</label></td>
+            <td><input type="text" id="todo" name="todo" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Add" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <h1>To do list</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Filter</th>
+          <th><input type="text" name="search" id="search" /></th>
+        </tr>
+      </thead>
+      <tbody id="todolistBody">
+        <tr>
+          <td><button type="button">Done</button></td>
+          <td>Todo Descriptions</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>

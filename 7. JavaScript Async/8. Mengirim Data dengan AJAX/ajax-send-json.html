@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="username"
+      >username:
+      <input type="text" name="username" id="username" />
+    </label>
+    <br />
+
+    <label for="password"
+      >password:
+      <input type="password" name="password" id="password" />
+    </label>
+    <br />
+
+    <input type="button" name="login" id="login" value="login" />
+
+    <h1 id="response"></h1>
+
+    <script>
+      // Fungsi untuk menangani proses login saat tombol diklik
+      function doLogin() {
+        // Membuat objek XMLHttpRequest untuk melakukan permintaan AJAX
+        const ajax = new XMLHttpRequest();
+
+        // Membuka koneksi POST ke endpoint yang ditentukan
+        ajax.open("POST", "https://eocqthj0okblx6p.m.pipedream.net");
+
+        // Event listener untuk menangani respons ketika permintaan selesai
+        ajax.onload = function () {
+          // Menampilkan respons di konsol browser
+          console.info(ajax.responseText);
+          // Mendapatkan elemen HTML dengan ID "response" untuk menampilkan hasil
+          const response = document.getElementById("response");
+          // Mengatur teks dari elemen "response" dengan respons dari server
+          response.innerText = ajax.responseText;
+        };
+
+        // Menetapkan header Content-Type sebagai application/json untuk mengirim data dalam format JSON
+        ajax.setRequestHeader("Content-Type", "application/json");
+
+        // Mengambil nilai username dan password dari input formulir
+        const json = {
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        };
+
+        // Mengirimkan data login dalam format JSON ke server
+        ajax.send(JSON.stringify(json));
+      }
+
+      // Menambahkan event listener untuk memanggil fungsi doLogin saat tombol "login" diklik
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="username"
+      >username:
+      <input type="text" name="username" id="username" />
+    </label>
+    <br />
+
+    <label for="password"
+      >password:
+      <input type="password" name="password" id="password" />
+    </label>
+    <br />
+
+    <input type="button" name="login" id="login" value="login" />
+
+    <h1 id="response"></h1>
+
+    <script>
+      function doLogin() {
+        const request = new Request("https://eocqthj0okblx6p.m.pipedream.net", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+        // yang diatas baru request aja, belum mengirim
+        // kirim data:
+        const response = fetch(request);
+
+        response
+          .then((response) => response.json())
+          .then(function (json) {
+            document.getElementById("response").textContent = json.success;
+          })
+          .catch(function (error) {
+            document.getElementById("response").textContent = error;
+          });
+      }
+
+      // cara kedua fetch:
+      //   function doLogin() {
+      //   const request = fetch("https://eocqthj0okblx6p.m.pipedream.net", {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //         Accept: "application/json",
+      //       },
+      //       body: JSON.stringify({
+      //         username: document.getElementById("username").value,
+      //         password: document.getElementById("password").value,
+      //       }),
+      //     });
+      //   }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

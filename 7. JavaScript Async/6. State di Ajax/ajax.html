@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="response">
+      <!-- akan tampil disini hasil dari AJAX-nya -->
+    </h1>
+    <script>
+      const ajax = new XMLHttpRequest();
+
+      console.info(ajax.responseText);
+
+      ajax.open("GET", "api/hello.json");
+      // ajax.open("GET", "api/kiwkiw.json"); // salah brooo
+
+      function displayResponse(json) {
+        const header = document.getElementById("response");
+        header.textContent = json.response;
+      }
+
+      ajax.onreadystatechange = function () {
+        console.info(`ready state change ${ajax.readyState}`);
+      };
+
+      ajax.addEventListener("load", function () {
+        if (ajax.status === 200) {
+          const json = JSON.parse(ajax.responseText);
+          displayResponse(json);
+        } else {
+          displayResponse({
+            response: `terjadi kesalahan dengan status ${ajax.status}`,
+          });
+        }
+      });
+
+      ajax.send();
+    </script>
+  </body>
+</html>

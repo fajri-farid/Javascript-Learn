@@ -1,0 +1,8 @@
+APA ITU AJAX?
+- AJAX singkatan dari Asynchronous JavaScript and XML
+- AJAX biasanya digunakan untuk mengambil atau mengirim data ke URL lain
+- Untuk membuat AJAX, kita bisa menggunakan class XMLHttpRequest
+- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest 
+- AJAX adalah singkatan dari Asynchronous JavaScript and XML. Ini adalah teknik pengembangan web yang 
+  memungkinkan aplikasi web untuk berkomunikasi dengan server di latar belakang tanpa harus memuat ulang 
+  seluruh halaman. Ini membuat interaksi pengguna menjadi lebih cepat dan mulus.

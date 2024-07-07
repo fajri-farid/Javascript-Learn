@@ -1,0 +1,33 @@
+APA ITU CALLBACK?
+- Callback, merupakan mekanisme untuk memanggil kembali kode yang ada di program dari proses Async
+- Callback biasanya dibuat dalam bentuk function as parameter, dan parameter function tersebut akan 
+  dieksekusi saat proses Async selesai
+- Dengan menggunakan Callback, program bisa menerima informasi yang dibutuhkan dari proses yang berjalan 
+  secara Async
+
+ASYNC METHOD
+- Ada banyak method Async yang terdapat di JavaScript, yang akan kita bahas kali ini adalah :
+    - setTimeout(callback, timeInMilis), digunakan untuk menjalankan proses Async sekali dalam waktu 
+      tertentu.
+    - setInterval(callback, timeInMilis), digunakan untuk menjalankan proses Async secara periodik dalam 
+      waktu tertentu.
+
+SET INTERVAL VS SET TIME OUT
+FUNGSI
+set interval : Fungsi: Menjalankan fungsi atau kode berulang kali dengan interval waktu yang tetap.
+set timeout  : Fungsi: Menjalankan fungsi atau kode sekali setelah jeda waktu tertentu.
+
+SYNTAX
+set interval : setInterval(function, interval)
+set timeout  : setTimeout(function, delay)
+
+KEGUNAAN
+set interval : Digunakan untuk menjalankan kode secara berulang setiap interval waktu tertentu 
+               (dalam milidetik).
+set timeout  : Digunakan untuk menunda eksekusi kode satu kali setelah waktu tertentu (dalam milidetik).
+
+
+PERUMPAMAAN
+Bayangkan kamu memesan pizza. Saat memesan, kamu juga memberikan nomor teleponmu agar kurir bisa menelepon 
+saat pizza sudah sampai. Nomor telepon yang kamu berikan ini mirip seperti callback. Si kurir (fungsi lain) 
+akan "memanggil" nomor teleponmu (callback) ketika pizza sudah siap (peristiwa terjadi).

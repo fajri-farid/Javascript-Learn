@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="response">
+      <!-- akan tampil disini hasil dari AJAX-nya -->
+    </h1>
+    <script>
+      // 1. Membuat objek XMLHttpRequest
+      const ajax = new XMLHttpRequest(); // Inisialisasi objek untuk melakukan permintaan AJAX
+
+      // (Opsional) Tampilkan respons awal (biasanya kosong)
+      console.info(ajax.responseText);
+
+      // 2. Konfigurasi Permintaan
+      ajax.open("GET", "api/hello.json"); // Metode GET untuk mengambil data dari file JSON
+
+      // 3. Tangani Respons saat Selesai Dimuat
+      ajax.addEventListener("load", function () {
+        // Parsing respons JSON menjadi objek JavaScript
+        const json = JSON.parse(ajax.responseText);
+
+        // Dapatkan elemen <h1>
+        const header = document.getElementById("response");
+
+        // Tampilkan data dari respons JSON di elemen <h1>
+        header.textContent = json.response;
+      });
+
+      // 4. Kirim Permintaan
+      ajax.send();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Time Out</title>
+  </head>
+  <h1 id="header">Menampilkan waktu real perdetik</h1>
+  <p id="waktu"></p>
+  <body>
+    <script>
+      const setTime = () => {
+        const header = document.getElementById("waktu");
+        header.textContent = new Date().toString();
+
+        // document.body.appendChild(header);
+        // append child itu kan harus ada tempat penampungannya baru bisa kepake (ada element nya)
+        // disini kita taruh dia di body
+      };
+
+      setInterval(setTime, 1000);
+      console.info("program selesai");
+    </script>
+  </body>
+</html>

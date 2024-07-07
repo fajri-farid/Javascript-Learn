@@ -1,0 +1,5 @@
+Sistem mencari informasi pengguna dengan ID 1.
+Setelah menemukan pengguna ("John Doe"), sistem mencari pesanan yang dibuat oleh pengguna tersebut 
+(misalnya, "Laptop").
+Kemudian, sistem mencari detail dari pesanan tersebut (harga 1000).
+Hasil detail pesanan ditampilkan di konsol.

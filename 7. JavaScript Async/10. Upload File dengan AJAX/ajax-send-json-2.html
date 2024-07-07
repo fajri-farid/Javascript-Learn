@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form id="registerForm">
+      <label for="username"
+        >username:
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+
+      <label for="name"
+        >name:
+        <input type="text" name="name" id="name" />
+      </label>
+      <br />
+
+      <label for="profile"
+        >profile:
+        <input type="file" name="profile" id="profile" />
+        <!-- klw mau filenya bisa > 1, maka tambahkan saja multiple setelah "profile" -->
+      </label>
+      <br />
+
+      <input type="button" name="register" id="register" value="register" />
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+      function doRegister() {
+        const ajax = new XMLHttpRequest();
+        const url = "https://eocqthj0okblx6p.m.pipedream.net";
+
+        ajax.open("POST", url, true);
+        ajax.onload = function () {
+          if (ajax.status >= 200 && ajax.status < 300) {
+            const response = document.getElementById("response");
+            response.innerText = ajax.responseText;
+          } else {
+            console.error("Error:", ajax.statusText);
+            const response = document.getElementById("response");
+            response.innerText = "Error: " + ajax.statusText;
+          }
+        };
+
+        const form = new FormData(document.getElementById("registerForm"));
+        const files = document.getElementById("profile").files;
+        if (files.length > 0) {
+          form.append("profile", files[0]);
+        }
+
+        ajax.send(form);
+      }
+
+      document.getElementById("register").onclick = doRegister;
+    </script>
+  </body>
+</html>

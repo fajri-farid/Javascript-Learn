@@ -1,0 +1,22 @@
+APA ITU PROMISE
+- Promise merupakan proxy untuk sebuah nilai di masa depan (Future) yang belum diketahui saat pembuatan 
+  Promise tersebut.
+- Biasa Promise digunakan sebagai proxy untuk proses Async.
+- Penggunaan Promise sangat mudah, dan lebih mirip dengan kode Synchronous.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise 
+
+Promise adalah sebuah objek dalam JavaScript yang merepresentasikan hasil dari sebuah operasi asinkron 
+(operasi yang belum tentu selesai saat itu juga). Promise seperti janji yang akan ditepati di masa depan, 
+entah itu berhasil (terpenuhi) atau gagal (ditolak).
+
+Perumpamaan: 
+Bayangkan kamu memesan paket dari toko online. Setelah memesan, kamu akan mendapatkan nomor resi. 
+Nomor resi ini seperti Promise. Kamu belum menerima paketnya (hasil operasi), tapi kamu tahu bahwa paket 
+itu akan datang (janji). Kamu bisa mengecek status pengiriman paket dengan nomor resi tersebut.
+
+PROMISE STATE
+Sebuah Promise memiliki tiga keadaan:
+Pending     : Keadaan awal, operasi masih berlangsung.
+Fulfilled   : Operasi berhasil, janji terpenuhi.
+Rejected    : Operasi gagal, janji ditolak.
+

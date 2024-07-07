@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form action="">
+      <label for="username"
+        >username:
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+
+      <label for="name"
+        >name:
+        <input type="text" name="name" id="name" />
+      </label>
+      <br />
+
+      <label for="profile"
+        >profile:
+        <input type="file" name="profile" id="profile" />
+        <!-- klw mau filenya bisa > 1, maka tambahkan saja multiple setelah "profile" -->
+      </label>
+      <br />
+
+      <input type="button" name="register" id="register" value="register" />
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+      function doLogin() {
+        const ajax = new XMLHttpRequest();
+
+        ajax.open("POST", "https://eocqthj0okblx6p.m.pipedream.net");
+        ajax.onload = function () {
+          console.info(ajax.responseText);
+          const response = document.getElementById("response");
+          response.innerText = ajax.responseText;
+        };
+
+        const form = new FormData();
+        form.append("username", document.getElementById("username").value);
+        form.append("name", document.getElementById("name").value);
+
+        const files = document.getElementById("profile").files;
+        const firstFile = files.item[0];
+
+        form.append("profile", firstFile);
+
+        ajax.send(form);
+      }
+
+      document.getElementById("register").onclick = doLogin;
+    </script>
+  </body>
+</html>

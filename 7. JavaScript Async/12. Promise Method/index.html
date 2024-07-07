@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>id :</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>name :</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>price :</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function getProduct() {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("get", "api/product.json");
+
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`Error get product with response : ${ajax.responseText}`);
+            }
+          };
+          ajax.send();
+        });
+      }
+
+      // console.log(getProduct);
+
+      getProduct()
+        .then(function (response) {
+          console.log(response);
+          return JSON.parse(response);
+        })
+        .then(function (json) {
+          // jika data tidak muncul di web lakukan console agar memastikan kita memanggil object dengan
+          // benar
+          console.log(json);
+          // const json = JSON.parse(response);
+          document.getElementById("id").textContent = json.id;
+          document.getElementById("name").textContent = json.name;
+          document.getElementById("price").textContent = json.price;
+          // document.getElementById("id").innerHTML = "hell";
+        });
+    </script>
+  </body>
+</html>

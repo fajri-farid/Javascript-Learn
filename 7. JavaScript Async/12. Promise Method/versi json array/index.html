@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody id="productTableBody">
+        
+      </tbody>
+    </table>
+
+    <script>
+      function getProduct() {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", "api/product.json");
+
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(JSON.parse(ajax.responseText));
+            } else {
+              reject(`Error getting products: ${ajax.status}`);
+            }
+          };
+
+          ajax.onerror = function () {
+            reject("Network Error");
+          };
+
+          ajax.send();
+        });
+      }
+
+      getProduct()
+        .then(function (products) {
+          const tableBody = document.getElementById("productTableBody");
+
+          products.forEach(function (product) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>id: ${product.id}</td>
+            <td>name: ${product.name}</td>
+            <td>price: ${product.price}</td>
+          `;
+            tableBody.appendChild(row);
+          });
+        })
+
+        //   products.forEach(function (product) {
+        //     const row = document.createElement("tr");
+        //     const row1 = document.createElement("tr");
+        //     const row2 = document.createElement("tr");
+        //     row.innerHTML = `
+        //     <td>id: </td>
+        //     <td>${product.id}</td>
+        //   `;
+        //     row1.innerHTML = `
+        //   <td>name: </td>
+        //   <td>${product.name}</td>
+        //   `;
+        //     row2.innerHTML = `
+        //   <td>price: </td>
+        //     <td>${product.price}</td>
+        //   `;
+        //     tableBody.appendChild(row);
+        //     tableBody.appendChild(row1);
+        //     tableBody.appendChild(row2);
+        //   });
+        // })
+        .catch(function (error) {
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
+</html>

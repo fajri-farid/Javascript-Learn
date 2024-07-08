@@ -1,0 +1,78 @@
+<!-- 
+sumber:
+https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      navigator.getBattery().then((battery) => {
+        function updateAllBatteryInfo() {
+          updateChargeInfo();
+          updateLevelInfo();
+          updateChargingInfo();
+          updateDischargingInfo();
+        }
+        updateAllBatteryInfo();
+
+        battery.addEventListener("chargingchange", () => {
+          updateChargeInfo();
+        });
+        function updateChargeInfo() {
+          console.log(`Battery charging? ${battery.charging ? "Yes" : "No"}`);
+        }
+
+        battery.addEventListener("levelchange", () => {
+          updateLevelInfo();
+        });
+        function updateLevelInfo() {
+          console.log(`Battery level: ${battery.level * 100}%`);
+        }
+
+        battery.addEventListener("chargingtimechange", () => {
+          updateChargingInfo();
+        });
+        function updateChargingInfo() {
+          console.log(`Battery charging time: ${battery.chargingTime} seconds`);
+        }
+
+        battery.addEventListener("dischargingtimechange", () => {
+          updateDischargingInfo();
+        });
+        function updateDischargingInfo() {
+          let totalMinutes = battery.dischargingTime / 60;
+          let hours = Math.floor(totalMinutes / 60);
+          let minutes = Math.floor(totalMinutes % 60);
+          // tambah angka 0 diawal jika menit < 10
+          // kek 10:01 begitu
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          hours = hours < 10 ? "0" + hours : hours;
+
+          // jangan let didalam if karena scopenya hanya didalam if saja!
+          let sisaJam, sisaMenit;
+          if (minutes > 1) {
+            sisaMenit = "minutes";
+          } else {
+            sisaMenit = "minutes";
+          }
+
+          if (hours > 1) {
+            sisaJam = "Hours";
+          } else {
+            sisaJam = "Hour";
+          }
+
+          console.log(
+            `Battery discharging time: ${hours} ${sisaJam} dan ${minutes} ${sisaMenit}`
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API 
+
+INFO MENGENAI BATTERY STATUS API:
+
+Battery Status API, atau yang lebih sering disebut sebagai Battery API, menyediakan informasi tentang 
+tingkat pengisian daya baterai sistem dan memungkinkan Anda mendapatkan pemberitahuan melalui event 
+(peristiwa) yang dikirimkan ketika tingkat daya baterai atau status pengisian daya berubah. Ini dapat 
+digunakan untuk menyesuaikan penggunaan sumber daya aplikasi Anda untuk mengurangi pengurasan baterai 
+saat baterai lemah, atau untuk menyimpan perubahan sebelum baterai habis guna mencegah kehilangan data.
